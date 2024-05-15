@@ -7,7 +7,7 @@ CORS(app)
 
 @app.route("/")
 def hello_world():
-    return "<p>Welcome to authentication api!!</p>"
+    return "<p>Welcome to authentication api!</p>"
 
 @app.route("/login", methods=['GET', 'POST'])
 # @cross_origin()
