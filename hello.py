@@ -3,11 +3,11 @@ from flask_cors import CORS, cross_origin
 from flask_mysqldb import MySQL
 
 app = Flask(__name__)
-CORS(app, origins="http://192.168.56.1:3000")
+CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type' 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_PASSWORD'] = 'your_password'
 app.config['MYSQL_DB'] = 'kvsp_paul'
 
 mysql = MySQL(app)
