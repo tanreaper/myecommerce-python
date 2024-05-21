@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the code from the Git branch
+                git branch: 'venkat', url: 'https://github.com/tanreaper/myecommerce-python.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    // Build the Docker image locally
+                    powershell 'docker build -t myecommerce-python .'
+                }
+            }
+        }
+
+        stage('Run') {
+            steps {
+                script {
+                    // Stop and remove any existing container with the same name
+                    powershell """
+                    docker stop myecommerce-python -ErrorAction SilentlyContinue
+                    docker rm myecommerce-python -ErrorAction SilentlyContinue
+                    """
+
+                    // Run the Docker container
+                    powershell 'docker run -d -p 8000:8000 --name myecommerce-python myecommerce-python'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            // Clean workspace after build
+            cleanWs()
+        }
+    }
+}
