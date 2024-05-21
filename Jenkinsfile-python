@@ -22,10 +22,10 @@ pipeline {
             steps {
                 script {
                     // Stop and remove any existing container with the same name
-                    powershell """
-                    docker stop myecommerce-python -ErrorAction SilentlyContinue
-                    docker rm myecommerce-python -ErrorAction SilentlyContinue
-                    """
+                    // powershell """
+                    // docker stop myecommerce-python -ErrorAction SilentlyContinue
+                    // docker rm myecommerce-python -ErrorAction SilentlyContinue
+                    // """
 
                     // Run the Docker container
                     powershell 'docker run -d -p 8000:8000 --name myecommerce-python myecommerce-python'
