@@ -5,7 +5,7 @@ from flask_mysqldb import MySQL
 app = Flask(__name__)
 CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type' 
-app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_HOST'] = 'mysql-db'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'your_password'
 app.config['MYSQL_DB'] = 'kvsp_paul'

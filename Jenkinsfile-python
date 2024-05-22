@@ -28,7 +28,7 @@ pipeline {
                     // """
 
                     // Run the Docker container
-                    powershell 'docker run -d -p 8000:8000 --name myecommerce-python myecommerce-python'
+                    powershell 'docker run -d --network python-mysql-network -p 5000:5000 --name myecommerce-python myecommerce-python'
                 }
             }
         }

@@ -8,6 +8,7 @@ ENV FLASK_APP=app.py
 COPY ./requirements.txt .
 
 RUN pip install -r requirements.txt
+
 RUN pip install flask flask_cors
 RUN pip install flask flask_MySQLdb
 

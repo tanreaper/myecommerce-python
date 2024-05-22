@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS kvsp_paul;
+
+USE kvsp_paul;
+
+CREATE TABLE IF NOT EXISTS pygo (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    email VARCHAR(255)
+);
